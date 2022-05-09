@@ -1,0 +1,35 @@
+
+
+### Frontend
+
+Vue.js et SASS pour la partie front-end.
+### Backend
+Node.js, framework Express, MySQL et l'ORM Sequelize.
+
+``
+### Prérequis
+
+Installer Node.js sur son ordinateur.
+
+Installer MySql sur l'ordinateur et parametrer les accès dans back\config\db.config.js
+
+Installer Sequelize avec 'npm'
+
+## Dossier back
+```
+Vérifier que node.js est bien installé.
+
+nodemon server
+```
+
+## Dossier front
+
+### Project setup
+```
+npm install
+```
+
+#### Compiles and hot-reloads for development
+```
+npm run serve
+```
