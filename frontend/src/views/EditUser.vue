@@ -122,23 +122,14 @@ export default {
     },
     editUserPassword() {
       const id = this.$route.params.id;
-      /*le mot de passe doit contenir :
-        - de 8 à 30 caractères
-        - au moins une lettre minuscule
-        - au moins une lettre majuscule
-        - au moins un chiffre
-        - au moins un de ces caractères spéciaux: $ @ % * + - _ !
-        - aucun autre caractère possible: pas de & ni de {
-        */
-      const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,30})$/;
-
+     
       let userToken = userInLocalStorage.map(user => user.token);
 
       let userId = userInLocalStorage.map(user => user.userId);
 
       if(this.passwordCheck.password == this.dataEdit.password) {
 
-        if (passwordRegex.test(this.dataEdit.password) == true) {
+        
 
           axios.put(`http://localhost:3000/api/auth/${id}`, {
             password: this.dataEdit.password,
@@ -156,9 +147,8 @@ export default {
             alert('Impossible de modifier le mot de passe');
           })
 
-        } else {
-          alert('Votre mot de mot de passe doit contenir au moins : une lettre minuscule, une lettre majuscule, un chiffre, un de ces caractères spéciaux: $ @ % * + - _ ! et 8 à 30 caractères');
-        }
+       
+        
 
       } else {
         alert('Veuillez entrer deux fois le même mot de passe !');
